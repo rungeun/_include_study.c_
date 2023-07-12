@@ -5,21 +5,17 @@
 
 ## 목차
 ### c++ 학습
-
-### c 학습
-- [문자형](#문자형)
-  - [문자형 변수](#문자형-변수)
-  - [문자열형 변수](#문자열형-변수)
-  - [문자형 상수](#문자형-상수)
-  - [문자열형 상수](#문자열형-상수)
-- [연산자](#연산자)
-  - [논리 연산자](#논리-연산자)
-  - [조건(삼항) 연산자](#조건삼항-연산자)
-  - [쉼표 연산자](#쉼표-연산자)
-  - [캐스트 연산자(형 변환)](#캐스트-연산자-형-변환)
+- [입출력](#입출력)
+  - [출력 std::cout](#입력-std::cout)
+  - [입력 std::cin](#출력-std::cin)
+  - [문자열 입출력](#문자열-입출력)
 - [함수](#함수)
-- [포인터](#포인터)
-
+  - [함수 오버로딩](#함수-오버로딩)
+  - [매개변수 디폴트 값](#매개변수-디폴트-값)
+  - [인라인 함수](#인라인-함수)
+ 
+    
+### 예제
 - [에제 1]()
 
 
@@ -33,24 +29,54 @@
 
 ---
 # C++ 학습
-- ## 문자형
-- ### 문자형 변수
-```c
-#include<stdio.h>
+- ## 입출력
+- ### 출력 std::cout
+`std::cout << '출력대상';` 출력하기
+>
+`std::endl` `\n` 개행
+```cpp
+#include<iostream>
 
-int main(void){
-    char ch=200;
-    unsigned char c=200;
-    char d='a';
-    
-    printf("문자형 변수 ch의 값은 %d\n",ch);   // -56
-    printf("문자형 변수 c의 값은 %d\n",c);     // 200
-    printf("문자형 변수 ch의 값은 %d\n",d);    // 97
+int main(void) {
+	std::cout << "Hello World" << std::endl;
+	std::cout << "Hello World\n";
+	std::cout << "가나다" << std::endl;
+	return 0;
 }
 ```
- `char 변수명` -128 ~ +127 
- >
- `unsigned char 변수명` 0 ~ +255
+- ### 입력 std::cin
+`std::cin >> '변수';` 입력하기 
+```cpp
+#include<iostream>
 
+int main(void) {  //정수형 입출력
+	int val1;
+	std::cout << "첫 번째 숫자입력: ";
+	std::cin >> val1;
 
+	int val2;  //cpp에서는 지역변수 선언의 위치가 자유로움
+	std::cout << "두 번째 숫자입력: ";
+	std::cin >> val2;
+	int result = val1 + val2;
+	std::cout << "덧셈결과: " << result << std::endl;
+	return 0;
+}
+```
+- ### 문자열 입출력
+`char 변수[크기];` 배열 문자열 선언
+```cpp
+#include<iostream>
+
+int main(void) {  //문자열 입출력
+	char str[100];
+	std::cin >> str;
+	std::cout << str << std::endl;
+	return 0;
+}
+```
+---
+- ## 함수
+- ### 함수 오버로딩
+- ### 매개변수 디폴트 값
+- ### 인라인 함수
 
